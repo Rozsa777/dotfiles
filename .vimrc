@@ -1,11 +1,10 @@
 " Powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 set laststatus=2
 set showtabline=2
 set noshowmode
-
 " setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
@@ -23,7 +22,6 @@ set showcmd
 "colorscheme molokai
 "colorscheme solarized
 syntax on
-
 " 見た目系
 " 行番号を表示
 set number
@@ -46,8 +44,6 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-
-
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
 set list listchars=tab:\▸\-
@@ -57,8 +53,6 @@ set expandtab
 set tabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=2
-
-
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
@@ -72,3 +66,24 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+"================
+" NeoBundle
+"================
+set nocompatible
+filetype off
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+" Initialize
+"call neobundle#begin(expand('~/.vim/bundle/'))
+" NoeBundle で NeoBundleを管理
+"NeoBundleFetch 'Shougo/neobundle.vim'
+" originalrepos on github
+"NeoBundle 'Shougo/neobundle.vim'        " <-もしかしたら不要
+"NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+"call neobundle#end()
+"filetype plugin indent on     " required!
+" 起動時にインストールチェック
+"NeoBundleCheck
+" 256色対応？
+"set t_Co=254
